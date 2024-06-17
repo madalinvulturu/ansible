@@ -36,8 +36,6 @@
  
   - name: install apache and php (Ubuntu)
     apt:
-       name:
-         - mariadb-server
-         - latest
+       name: mariadb-server
        state: latest
     when: ansible_distribution == "Ubuntu"
