@@ -29,3 +29,15 @@
          - php
        state: latest
     when: ansible_distribution == "CentOS"
+
+- hosts: db_servers
+  become: true
+  tasks:
+ 
+  - name: install apache and php (Ubuntu)
+    apt:
+       name:
+         - mariadb-server
+         - latest
+       state: latest
+    when: ansible_distribution == "Ubuntu"
