@@ -21,3 +21,11 @@
          - libapache2-mod-php
        state: latest
     when: ansible_distribution == "Ubuntu"
+  
+  - name: install apache and php (CentOS)
+    apt:
+       name:
+         - httpd
+         - php
+       state: latest
+    when: ansible_distribution == "CentOS"
