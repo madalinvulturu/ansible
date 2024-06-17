@@ -15,7 +15,6 @@
       state: latest
     when: ansible_distribution == "Ubuntu"
 
-
   - name: add php support for apache
     apt:
       name: libapache2-mod-php
@@ -25,17 +24,16 @@
   - name: udpate repository index
     dnf:
       update_cache: yes
-    when: ansible_distribution == "Ubuntu"
+    when: ansible_distribution == "VMware Photon OS"
     
   - name: install apache2 package
     dnf:
       name: apache2
       state: latest
-    when: ansible_distribution == "Ubuntu"
-
+    when: ansible_distribution == "VMware Photon OS"
 
   - name: add php support for apache
     dnf:
       name: libapache2-mod-php
       state: latest
-    when: ansible_distribution == "Ubuntu"
+    when: ansible_distribution == "VMware Photon OS"
