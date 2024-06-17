@@ -34,7 +34,7 @@
   become: true
   tasks:
  
-  - name: install apache and php (Ubuntu)
+  - name: install mariadb-server (Ubuntu)
     apt:
        name: mariadb-server
        state: latest
