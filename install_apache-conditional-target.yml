@@ -23,8 +23,8 @@
   - name: install apache and php (Ubuntu)
     apt:
        name:
-         - update_only: yes
-         - update_cache: yes
+         - apache2
+         - libapache2-mod-php
        state: latest
     when: ansible_distribution == "Ubuntu"
   
