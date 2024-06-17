@@ -3,16 +3,10 @@
 - hosts: all
   become: true
   tasks:
- 
-  - name: install udpates (CentOS)
-    dnf:
-      update_only: yes
-      update_cache: yes
-    when: ansible_distribution == "CentOS"
   
   - name: install udpates (Ubuntu)
     apt:
-      update_only: dist
+      upgrade: dist
       update_cache: yes
     when: ansible_distribution == "Ubuntu"
 
@@ -27,11 +21,3 @@
          - libapache2-mod-php
        state: latest
     when: ansible_distribution == "Ubuntu"
-  
-  - name: install apache and php (CentOS)
-    dnf:
-       name:
-         - httpd
-         - php
-       state: latest
-    when: ansible_distribution == "CentOS"
