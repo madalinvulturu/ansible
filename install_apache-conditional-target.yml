@@ -10,6 +10,12 @@
       update_cache: yes
     when: ansible_distribution == "Ubuntu"
 
+  - name: install udpates (CentOS)
+    dnf:
+      update_only: yes
+      update_cache: yes
+    when: ansible_distribution == "CentOS"
+    
 - hosts: web_servers
   become: true
   tasks:
@@ -23,7 +29,7 @@
     when: ansible_distribution == "Ubuntu"
   
   - name: install apache and php (CentOS)
-    apt:
+    dnf:
        name:
          - httpd
          - php
