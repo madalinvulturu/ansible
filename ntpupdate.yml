@@ -4,5 +4,6 @@
   become: true
   tasks:
 
-  - name: install apache and php (CentOS)
-    tags: apache,httpd,centos
+- name: Unconditionally reboot the machine with all defaults
+  tags: apache,httpd,centos
+  ansible.builtin.reboot:
