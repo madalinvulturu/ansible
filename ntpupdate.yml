@@ -1,7 +1,9 @@
 ---
-- hosts: reboot
-  gather_facts: no
+
+- hosts: all
+  become: true
   tasks:
+  
     - name: reboot
       command: /sbin/shutdown -r now
       sudo: yes
