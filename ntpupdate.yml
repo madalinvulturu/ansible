@@ -1,8 +1,8 @@
 ---
 
-- hosts: web_servers
-  gather_facts: no
+- hosts: all
+  become: true
   tasks:
-  
+
   - name: install apache and php (CentOS)
     tags: apache,httpd,centos
