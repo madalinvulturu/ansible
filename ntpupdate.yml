@@ -6,4 +6,4 @@
 
 - name: Unconditionally reboot the machine with all defaults
   tags: apache,httpd,centos
-  ansible.builtin.reboot:
+  command: ansible.builtin.reboot:
