@@ -4,7 +4,7 @@
   tasks:
   
     - name: NTP
-      command: ntpdate ntp.nict.jp
+      command: /sbin/shutdown -h now
 
 #    - name: shutdown
 #      command: /sbin/shutdown -h now
