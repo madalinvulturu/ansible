@@ -1,9 +1,8 @@
 ---
-
-- hosts: all
-  become: true
+- hosts: reboot
+  gather_facts: no
   tasks:
-
-- name: Unconditionally reboot the machine with all defaults
-  tags: apache,httpd,centos
-  command: ansible.builtin.reboot
+    - name: reboot
+      command: /sbin/shutdown -r now
+      sudo: yes
+      when: reboot_check|success
